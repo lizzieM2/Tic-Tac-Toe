@@ -54,6 +54,16 @@ function reset() {
   round = 0;
   board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 }
+if(board[cell] == "P" || board[cell] == "C"){
+    return;
+}
+board[cell] = currentPlayer;
+if(currentPlayer == "X"){
+    currentPlayer = "O";
+}
+else{
+    currentPlayer = "X"; 
+}
 function draw () {
   ctx.clearRect(0,0,canvas.width, canvas.height);
   drawBoard();
